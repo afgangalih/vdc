@@ -4,10 +4,11 @@ import { Volume2, VolumeX } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 
 const MusicToggle = () => {
-  const { musicPlaying, setMusicPlaying, chocolateBroken } = useAppContext();
+  const { musicPlaying, setMusicPlaying, currentSection } = useAppContext();
 
-  // Hide music toggle when letter is visible to reduce visual clutter
-  if (chocolateBroken) return null;
+  // Hide only during Letter section (currentSection === 2)
+  // Show in Hero (0), Game (1), and Footer (3)
+  if (currentSection === 2) return null;
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
