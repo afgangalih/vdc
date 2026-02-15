@@ -4,7 +4,7 @@ import { Volume2, VolumeX } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 
 const MusicToggle = () => {
-  const { musicPlaying, setMusicPlaying, currentSection } = useAppContext();
+  const { musicPlaying, toggleMusic, currentSection } = useAppContext();
 
   const hiddenSections = [2, 3, 4];
   if (hiddenSections.includes(currentSection)) return null;
@@ -12,7 +12,7 @@ const MusicToggle = () => {
   return (
     <div className="fixed bottom-6 right-6 z-50">
       <motion.button
-        onClick={() => setMusicPlaying(!musicPlaying)}
+        onClick={toggleMusic}
         className="w-16 h-16 bg-gold/10 border border-gold/30 rounded-full text-gold flex items-center justify-center shadow-lg hover:bg-gold/20 transition-colors"
         animate={{
           scale: musicPlaying ? [1, 1.08, 1] : 1,
