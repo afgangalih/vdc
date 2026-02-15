@@ -106,11 +106,11 @@ const ChocolateBar = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 2 }}
-                  className="pt-12 pb-20 text-center"
+                  className="absolute bottom-0 left-0 right-0 text-center px-6 pb-8"
                 >
                   <button 
                     onClick={() => setCurrentSection(3)}
-                    className="text-gold/60 font-serif italic border-b border-gold/20 hover:text-gold hover:border-gold transition-all duration-700 p-2 min-h-[44px]"
+                    className="italic text-gold/80 text-sm font-serif border-b border-gold/20 hover:text-gold hover:border-gold transition-all duration-700 p-2 min-h-[44px] w-full text-center"
                   >
                     Continue to the end...
                   </button>
