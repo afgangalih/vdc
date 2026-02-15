@@ -37,7 +37,15 @@
     @apply bg-chocolate/80 border border-gold/20 rounded-2xl shadow-2xl;
   }
 
-  /* 3D Transform Utilities */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
   .transform-style-3d {
     transform-style: preserve-3d;
   }

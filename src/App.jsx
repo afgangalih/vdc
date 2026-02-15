@@ -45,8 +45,6 @@ const MainContent = () => {
       <Voucher />
       <MusicToggle />
 
-      {/* Subtle UI Border Decoration */}
-      <div className="fixed inset-4 border border-gold/5 pointer-events-none rounded-2xl z-40 transition-opacity duration-1000" />
     </main>
   );
 };

@@ -110,7 +110,6 @@ const Game = () => {
         ))}
       </AnimatePresence>
 
-      <div className="absolute inset-4 pointer-events-none border-[1px] border-[#D4AF37]/10 m-4 rounded-3xl z-10" />
     </motion.section>
   );
 };
