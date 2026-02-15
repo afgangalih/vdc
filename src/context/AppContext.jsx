@@ -8,9 +8,15 @@ export const AppProvider = ({ children }) => {
   const [musicPlaying, setMusicPlaying] = useState(false);
   const [itemsCaught, setItemsCaught] = useState(0);
   const [chocolateBroken, setChocolateBroken] = useState(false);
-  const [currentSection, setCurrentSection] = useState(0); // 0: Hero, 1: Game, 2: Chocolate, 3: Footer
+  const [currentSection, setCurrentSection] = useState(0); // 0: Hero, 1: GameMenu, 2: Game1, 3: Game2, 4: Chocolate, 5: Footer
 
-  // Audio Logic
+  // NEW: Game progression state
+  const [game1Completed, setGame1Completed] = useState(false);
+  const [game2Completed, setGame2Completed] = useState(false);
+  const [game2Progress, setGame2Progress] = useState(0); // 0-4
+  const [showLockedModal, setShowLockedModal] = useState(false);
+
+  // Audio Logic (UNTOUCHED)
   const audioRef = React.useRef(null);
 
   useEffect(() => {
@@ -156,6 +162,20 @@ export const AppProvider = ({ children }) => {
     };
   }, []);
 
+  // Helper methods for game progression
+  const completeGame1 = () => {
+    setGame1Completed(true);
+    setGameCompleted(true);
+  };
+
+  const completeGame2 = () => {
+    setGame2Completed(true);
+  };
+
+  const toggleLockedModal = () => {
+    setShowLockedModal(prev => !prev);
+  };
+
   const value = {
     gameCompleted,
     setGameCompleted,
@@ -169,6 +189,19 @@ export const AppProvider = ({ children }) => {
     setChocolateBroken,
     currentSection,
     setCurrentSection,
+    // NEW game state
+    game1Completed,
+    setGame1Completed,
+    game2Completed,
+    setGame2Completed,
+    game2Progress,
+    setGame2Progress,
+    showLockedModal,
+    setShowLockedModal,
+    // Helper methods
+    completeGame1,
+    completeGame2,
+    toggleLockedModal,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

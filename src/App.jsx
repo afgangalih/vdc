@@ -3,7 +3,9 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { AppProvider, useAppContext } from './context/AppContext';
 import MusicToggle from './components/MusicToggle';
 import Hero from './components/Hero';
+import GameMenu from './features/GameMenu';
 import Game from './features/Game';
+import WordScramble from './features/WordScramble';
 import ChocolateBar from './components/ChocolateBar';
 import Footer from './components/Footer';
 import Voucher from './features/Voucher';
@@ -24,18 +26,30 @@ const MainContent = () => {
         )}
         
         {currentSection === 1 && (
+          <motion.div key="gamemenu" className="w-full h-full">
+            <GameMenu />
+          </motion.div>
+        )}
+
+        {currentSection === 2 && (
           <motion.div key="game" className="w-full h-full">
             <Game />
           </motion.div>
         )}
+
+        {currentSection === 3 && (
+          <motion.div key="wordscramble" className="w-full h-full">
+            <WordScramble />
+          </motion.div>
+        )}
         
-        {currentSection === 2 && (
+        {currentSection === 4 && (
           <motion.div key="reveal" className="w-full h-full">
             <ChocolateBar />
           </motion.div>
         )}
 
-        {currentSection === 3 && (
+        {currentSection === 5 && (
           <motion.div key="footer" className="w-full h-full">
             <Footer />
           </motion.div>

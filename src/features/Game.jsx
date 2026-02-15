@@ -54,7 +54,7 @@ const FallingItem = ({ id, onCatch, type }) => {
 };
 
 const Game = () => {
-  const { itemsCaught, setItemsCaught, setCurrentSection, setGameCompleted } = useAppContext();
+  const { itemsCaught, setItemsCaught, setCurrentSection, completeGame1 } = useAppContext();
   const [items, setItems] = useState([]);
   const target = 11;
 
@@ -75,8 +75,8 @@ const Game = () => {
         const next = prev + 1;
         if (next >= target) {
           setTimeout(() => {
-            setGameCompleted(true);
-            setCurrentSection(2);
+            completeGame1();
+            setCurrentSection(1); // Back to GameMenu (Game 2 now unlocked)
           }, 500);
         }
         return next;

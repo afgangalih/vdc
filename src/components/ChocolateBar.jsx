@@ -116,7 +116,7 @@ const ChocolateBar = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2 }}
-                onClick={() => setCurrentSection(3)}
+                onClick={() => setCurrentSection(5)}
                 className="absolute bottom-4 right-4 text-xs text-[#D4AF37]/60 italic hover:text-[#D4AF37] transition-colors cursor-pointer"
               >
                 Continue to the end...
