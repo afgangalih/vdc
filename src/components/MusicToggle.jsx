@@ -4,10 +4,13 @@ import { Volume2, VolumeX } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 
 const MusicToggle = () => {
-  const { musicPlaying, setMusicPlaying } = useAppContext();
+  const { musicPlaying, setMusicPlaying, chocolateBroken } = useAppContext();
+
+  // Hide music toggle when letter is visible to reduce visual clutter
+  if (chocolateBroken) return null;
 
   return (
-    <div className="fixed bottom-8 right-8 z-50">
+    <div className="fixed bottom-6 right-6 z-50">
       <motion.button
         onClick={() => setMusicPlaying(!musicPlaying)}
         className="w-16 h-16 bg-gold/10 border border-gold/30 rounded-full text-gold flex items-center justify-center shadow-lg hover:bg-gold/20 transition-colors"
