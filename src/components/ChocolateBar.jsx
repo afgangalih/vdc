@@ -81,41 +81,46 @@ const ChocolateBar = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            className="w-full max-h-[85vh] overflow-y-auto scrollbar-hide flex justify-center"
+            className="min-h-screen flex items-center justify-center p-6 md:p-8"
           >
-            <div className="max-w-2xl w-[90%] border-2 border-gold rounded-xl bg-[#442D1C] shadow-[inset_0_0_20px_rgba(212,175,55,0.1)] p-6 md:p-10 text-left my-10 mx-4 md:mx-auto relative">
-              <h2 className="text-2xl md:text-3xl font-serif premium-gradient-text mb-8 italic">My Dearest,</h2>
-              <div className="space-y-6 font-serif text-cream/90 text-base md:text-xl leading-relaxed">
-                <p>
-                  As I was catching those small moments of sweetness, I couldn't help but think about every single second we've shared. 
-                  Like a perfect bar of chocolate, life with you is rich, warm, and something I want to savor forever.
-                </p>
-                <p>
-                  Every heart captured today represents a reason why my world is brighter because of you. 
-                  You are my favorite melody, my most precious adventure, and the "surprise" that makes every day worth celebrating.
-                </p>
-                <p className="mb-10">
-                  Happy Valentine's Day. I love you more than words can carry.
-                </p>
-                <p className="pt-8 text-gold italic font-medium">
-                  Forever yours, <br />
-                  <span className="text-2xl mt-2 block">gezi</span>
-                </p>
-
-                <motion.div 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 2 }}
-                  className="absolute bottom-0 left-0 right-0 text-center px-6 pb-8"
-                >
-                  <button 
-                    onClick={() => setCurrentSection(3)}
-                    className="italic text-gold/80 text-sm font-serif border-b border-gold/20 hover:text-gold hover:border-gold transition-all duration-700 p-2 min-h-[44px] w-full text-center"
-                  >
-                    Continue to the end...
-                  </button>
-                </motion.div>
+            <div className="relative w-[92%] max-w-lg max-h-[80vh] overflow-y-auto scrollbar-hide border-2 border-[#D4AF37] rounded-xl bg-[#442D1C] shadow-[inset_0_0_20px_rgba(212,175,55,0.1)] p-5 md:p-8">
+              {/* Salutation */}
+              <h2 className="text-xl font-serif italic text-[#D4AF37] mb-3">My Dearest,</h2>
+              
+              {/* Body Paragraphs */}
+              <p className="text-sm leading-relaxed text-[#F5EFE6] mb-3">
+                As I was catching those small moments of sweetness, I couldn't help but think about every single second we've shared. 
+                Like a perfect bar of chocolate, life with you is rich, warm, and something I want to savor forever.
+              </p>
+              <p className="text-sm leading-relaxed text-[#F5EFE6] mb-3">
+                Every heart captured today represents a reason why my world is brighter because of you. 
+                You are my favorite melody, my most precious adventure, and the "surprise" that makes every day worth celebrating.
+              </p>
+              
+              {/* Horizontal Line */}
+              <div className="w-full h-px bg-[#D4AF37]/30 my-4" />
+              
+              {/* Closing */}
+              <p className="text-base text-[#F5EFE6] mb-3">
+                Happy Valentine's Day. I love you more than words can carry.
+              </p>
+              
+              {/* Signature Block */}
+              <div className="pt-3 pb-12">
+                <p className="text-sm italic text-[#D4AF37]">Forever yours,</p>
+                <p className="text-lg italic text-[#D4AF37]">gezi</p>
               </div>
+
+              {/* Continue button - absolute positioned bottom-right */}
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 2 }}
+                onClick={() => setCurrentSection(3)}
+                className="absolute bottom-4 right-4 text-xs text-[#D4AF37]/60 italic hover:text-[#D4AF37] transition-colors cursor-pointer"
+              >
+                Continue to the end...
+              </motion.button>
             </div>
           </motion.div>
         )}

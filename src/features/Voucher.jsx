@@ -45,7 +45,7 @@ const Voucher = () => {
               onClick={() => setIsFlipped(!isFlipped)}
               className="relative w-full h-full shadow-[0_25px_60px_rgba(0,0,0,0.6)] transform-style-3d"
             >
-              {/* FRONT FACE */}
+              
               <div 
                 className="absolute inset-0 w-full h-full bg-[#F5EFE6] rounded-xl flex flex-col items-center justify-center border-2 border-[#F5EFE6] backface-hidden overflow-hidden text-[#442D1C]"
               >
@@ -71,7 +71,7 @@ const Voucher = () => {
                 </p>
               </div>
 
-              {/* BACK FACE */}
+              
               <div 
                 className="absolute inset-0 w-full h-full bg-[#442D1C] rounded-xl border-2 border-[#D4AF37] backface-hidden rotate-y-180 overflow-y-auto scrollbar-hide text-[#F5EFE6]"
               >
@@ -101,9 +101,7 @@ const Voucher = () => {
                   </div>
 
                   <footer className="text-center space-y-2 shrink-0">
-                    <p className="opacity-50 text-[10px] tracking-widest font-mono">
-                      VALID UNTIL: FOREVER
-                    </p>
+                   
                     
                     <motion.p
                       animate={{ opacity: [1, 0.4, 1] }}
