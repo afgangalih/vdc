@@ -6,8 +6,7 @@ import { useAppContext } from '../context/AppContext';
 const MusicToggle = () => {
   const { musicPlaying, setMusicPlaying, currentSection } = useAppContext();
 
-  // Hide only during Letter section (currentSection === 2)
-  // Show in Hero (0), Game (1), and Footer (3)
+  
   if (currentSection === 2) return null;
 
   return (
@@ -32,7 +31,7 @@ const MusicToggle = () => {
           <VolumeX className="w-7 h-7 opacity-70" />
         )}
         
-        {/* Infinite Spinner Ring when playing */}
+        
         {musicPlaying && (
           <motion.div 
             initial={{ rotate: 0 }}
