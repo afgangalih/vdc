@@ -6,8 +6,8 @@ import { useAppContext } from '../context/AppContext';
 const MusicToggle = () => {
   const { musicPlaying, setMusicPlaying, currentSection } = useAppContext();
 
-  
-  if (currentSection === 2) return null;
+  const hiddenSections = [2, 3, 4];
+  if (hiddenSections.includes(currentSection)) return null;
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
@@ -20,7 +20,7 @@ const MusicToggle = () => {
         transition={{
           duration: 2,
           repeat: Infinity,
-          ease: "easeInOut",
+          ease: 'easeInOut',
         }}
         whileHover={{ scale: 1.15 }}
         whileTap={{ scale: 0.95 }}
@@ -30,13 +30,12 @@ const MusicToggle = () => {
         ) : (
           <VolumeX className="w-7 h-7 opacity-70" />
         )}
-        
-        
+
         {musicPlaying && (
-          <motion.div 
+          <motion.div
             initial={{ rotate: 0 }}
             animate={{ rotate: 360 }}
-            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
             className="absolute inset-0 border-2 border-t-gold border-r-transparent border-b-transparent border-l-transparent rounded-full"
           />
         )}

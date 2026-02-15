@@ -15,16 +15,15 @@ const MainContent = () => {
 
   return (
     <main className="min-h-screen relative overflow-hidden bg-chocolate">
-      {/* Grain Noise Overlay */}
       <div className="noise-overlay" />
-      
+
       <AnimatePresence mode="wait">
         {currentSection === 0 && (
           <motion.div key="hero" className="w-full h-full">
             <Hero />
           </motion.div>
         )}
-        
+
         {currentSection === 1 && (
           <motion.div key="gamemenu" className="w-full h-full">
             <GameMenu />
@@ -42,7 +41,7 @@ const MainContent = () => {
             <WordScramble />
           </motion.div>
         )}
-        
+
         {currentSection === 4 && (
           <motion.div key="reveal" className="w-full h-full">
             <ChocolateBar />
@@ -55,10 +54,9 @@ const MainContent = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      
+
       <Voucher />
       <MusicToggle />
-
     </main>
   );
 };
